@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip A Coin</title>
+    <style>
+        #heading{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: lighter;
+            font-size: 50px;
+        }
+        #btn{
+            height: 40px;
+            width: 80px;
+            border: none;
+            background-color: rgb(56, 187, 248);
+            color: rgb(5, 5, 5);
+            
+        }
+        
+        #btn:hover{
+            background-color: antiquewhite;
+            color: black;
+            height: 40px;
+            transform: scale(1.2);
+            width: 80px;
+            
+        }
+        #container{
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            background-color: rgb(193, 255, 255);
+
+        }
+        #main{
+            margin-top: 20px;
+            align-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+        }
+        .icon{
+            
+            display: none;
+        }
+        #res{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <h1 id="heading">Flip The Coin</h1>
+            <button id="btn" onclick="flip()">Flip</button>
+            <!-- <button id="btn" onclick="setTimeout(flip, 2000);">Flip</button> -->
+            <div id="clock" class="icon">
+                <!-- <img src="2.png" alt="Tails"> -->
+                <h1>its flipping</h1>
+            </div>
+            <div id="heads" class="icon">
+                <img src="1.png" alt="Heads">
+            </div>
+            <div id="tails" class="icon">
+                <img src="2.png" alt="Tails">
+            </div>
+            <div id="result" >
+                <h1 id="res">
+
+                </h1>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    function flip(){
+        
+        let a = document.getElementById("btn");
+        let b = document.getElementById("heads");
+        let c = document.getElementById("tails");
+        let v = Math.floor(Math.random()*2);
+        console.log(v);
+        if(v==0){
+            document.getElementById("res").innerHTML="Look! Its Heads on the top.";
+            b.style.display="flex";
+            c.style.display="none";
+        }
+        else{
+            document.getElementById("res").innerHTML="Look! Its Tails on the top.";
+            c.style.display="flex";
+            b.style.display="none";
+        }
+
+    }
+</script>
+
+</html>
